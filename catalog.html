@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог проектов - Eco-Home</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Eco-Home</div>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="katalog.html">Проекты</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="catalog-header">
+            <h1>Каталог проектов</h1>
+            <p>Выберите дом своей мечты из нашей коллекции экологичных проектов</p>
+        </div>
+
+        <section class="filters">
+            <div class="filter-grid">
+                <div class="filter-item">
+                    <label>Площадь</label>
+                    <select>
+                        <option>Любая</option>
+                        <option>до 100 м²</option>
+                        <option>100-150 м²</option>
+                        <option>150-200 м²</option>
+                        <option>более 200 м²</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label>Этажность</label>
+                    <select>
+                        <option>Любая</option>
+                        <option>1 этаж</option>
+                        <option>2 этажа</option>
+                        <option>3 этажа</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label>Стоимость</label>
+                    <select>
+                        <option>Любая</option>
+                        <option>до 5 млн</option>
+                        <option>5-7 млн</option>
+                        <option>7-10 млн</option>
+                        <option>более 10 млн</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label>Спальни</label>
+                    <select>
+                        <option>Любое</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5+</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/house1.jpg" alt="Дом Хвойный">
+                </div>
+                <div class="project-info">
+                    <h3>Дом "Хвойный"</h3>
+                    <p class="project-price">от 5.2 млн ₽</p>
+                    <ul class="project-specs">
+                        <li>Площадь: 120 м²</li>
+                        <li>2 этажа</li>
+                        <li>4 спальни</li>
+                        <li>Терраса</li>
+                        <li>Гараж</li>
+                    </ul>
+                    <button>Подробнее</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/house2.jpg" alt="Дом Солнечный">
+                </div>
+                <div class="project-info">
+                    <h3>Дом "Солнечный"</h3>
+                    <p class="project-price">от 3.8 млн ₽</p>
+                    <ul class="project-specs">
+                        <li>Площадь: 85 м²</li>
+                        <li>1 этаж</li>
+                        <li>3 спальни</li>
+                        <li>Панорамные окна</li>
+                        <li>Веранда</li>
+                    </ul>
+                    <button>Подробнее</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/house3.jpg" alt="Дом Горный">
+                </div>
+                <div class="project-info">
+                    <h3>Дом "Горный"</h3>
+                    <p class="project-price">от 6.5 млн ₽</p>
+                    <ul class="project-specs">
+                        <li>Площадь: 150 м²</li>
+                        <li>2 этажа</li>
+                        <li>5 спален</li>
+                        <li>Гараж</li>
+                        <li>Балкон</li>
+                    </ul>
+                    <button>Подробнее</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/house4.jpg" alt="Дом Прибрежный">
+                </div>
+                <div class="project-info">
+                    <h3>Дом "Прибрежный"</h3>
+                    <p class="project-price">от 7.8 млн ₽</p>
+                    <ul class="project-specs">
+                        <li>Площадь: 180 м²</li>
+                        <li>2 этажа</li>
+                        <li>4 спальни</li>
+                        <li>Бассейн</li>
+                        <li>Сауна</li>
+                    </ul>
+                    <button>Подробнее</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Eco-Home. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filters = document.querySelectorAll('select');
+            filters.forEach(filter => {
+                filter.addEventListener('change', () => {
+                    console.log('Фильтры обновлены');
+                });
+            });
+
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const projectName = button.closest('.project-info').querySelector('h3').textContent;
+                    alert(`Вы выбрали ${projectName}. Наш менеджер свяжется с вами!`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
